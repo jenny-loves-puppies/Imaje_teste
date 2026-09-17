@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — Imaje | Imagine diferente</title>
+<meta name="description" content="Finalize seu pedido personalizado na Imaje.">
+<link rel="icon" href="images/logo-imaje.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Imaje — página inicial">
+      <img src="images/logo-imaje.png" alt="Logo Imaje">
+      <span class="brand-text"><strong>Imaje</strong><span>Imagine diferente</span></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <ul class="nav-list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Catálogo</a></li>
+        <li><a href="carrinho.html">Carrinho</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="carrinho.html" class="icon-btn" aria-label="Ver carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count" data-cart-count>0</span>
+      </a>
+      <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Você está aqui">
+      <a href="index.html">Início</a> <span>/</span> <a href="carrinho.html">Carrinho</a> <span>/</span> <span>Checkout</span>
+    </nav>
+    <header class="page-head">
+      <h1>Finalizar pedido</h1>
+      <p>Preencha seus dados, escolha a entrega e o pagamento. Confirmamos a arte no WhatsApp antes de produzir.</p>
+    </header>
+  </div>
+
+  <section class="section" style="padding-top:1rem" id="checkout-section">
+    <div class="container">
+      <div id="checkout-empty" hidden>
+        <div class="empty-state">
+          <div class="e-ic">🛒</div>
+          <h3>Seu carrinho está vazio</h3>
+          <p>Adicione produtos antes de finalizar o pedido.</p>
+          <p style="margin-top:1.4rem"><a href="produtos.html" class="btn btn-pink btn-lg">Explorar catálogo</a></p>
+        </div>
+      </div>
+
+      <form class="cart-layout" id="checkout-form" novalidate>
+        <div>
+          <!-- Dados -->
+          <section class="fieldset-card">
+            <h3><span class="n">1</span> Seus dados</h3>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="ck-name">Nome completo</label>
+                <input type="text" id="ck-name" name="name" autocomplete="name" placeholder="Como devemos te chamar?">
+              </div>
+              <div class="form-field">
+                <label for="ck-email">E-mail</label>
+                <input type="email" id="ck-email" name="email" autocomplete="email" placeholder="seu@email.com">
+              </div>
+              <div class="form-field">
+                <label for="ck-phone">Telefone / WhatsApp</label>
+                <input type="tel" id="ck-phone" name="phone" autocomplete="tel" placeholder="(31) 99999-9999">
+              </div>
+              <div class="form-field">
+                <label for="ck-cep">CEP</label>
+                <input type="text" id="ck-cep" name="cep" autocomplete="postal-code" placeholder="30000-000">
+                <p class="form-hint">Preenchemos seu endereço automaticamente.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Endereço -->
+          <section class="fieldset-card">
+            <h3><span class="n">2</span> Endereço de entrega</h3>
+            <div class="form-field full">
+              <label for="ck-address">Endereço</label>
+              <input type="text" id="ck-address" name="address" autocomplete="street-address" placeholder="Rua, número, bairro, cidade/UF">
+            </div>
+            <div class="form-field full">
+              <label for="ck-complement">Complemento</label>
+              <input type="text" id="ck-complement" name="complement" placeholder="Apartamento, bloco, referência…">
+            </div>
+            <div class="form-field full">
+              <label for="ck-notes">Observações da personalização</label>
+              <textarea id="ck-notes" name="notes" placeholder="Nomes, frases, cores, datas, links de imagens… conte tudo que você imaginou!"></textarea>
+              <p class="form-hint">Pode enviar arquivos depois pelo WhatsApp — combinamos tudo antes de produzir.</p>
+            </div>
+          </section>
+
+          <!-- Entrega -->
+          <section class="fieldset-card">
+            <h3><span class="n">3</span> Forma de entrega</h3>
+            <div id="shipping-options"></div>
+          </section>
+
+          <!-- Pagamento -->
+          <section class="fieldset-card">
+            <h3><span class="n">4</span> Pagamento</h3>
+            <aside class="notice">
+              <span class="n-ic">⚠️</span>
+              <span><strong>Importante:</strong> este site é estático e não processa cobranças. Ao finalizar, registramos seu pedido e enviamos o link de pagamento oficial do Mercado Pago por WhatsApp/e-mail. Nunca digite dados de cartão aqui.</span>
+            </aside>
+            <div id="payment-options"></div>
+          </section>
+        </div>
+
+        <!-- Resumo -->
+        <aside class="summary-box" id="checkout-summary" aria-label="Resumo do pedido"></aside>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo-imaje.png" alt="Logo Imaje">
+        <p>Criamos ideias. Transformamos em experiências. Presentes personalizados com tecnologia, criatividade e afeto.</p>
+        <div class="social-row">
+          <a href="https://instagram.com/imaje" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram da Imaje"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" data-wa-link class="social-btn wa" target="_blank" rel="noopener" aria-label="WhatsApp da Imaje"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:contato@imaje.com.br" class="social-btn" aria-label="Enviar e-mail"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="produtos.html?cat=Camisetas">Camisetas</a></li>
+          <li><a href="produtos.html?cat=Bottons">Bottons</a></li>
+          <li><a href="produtos.html?cat=Adesivos">Adesivos</a></li>
+          <li><a href="produtos.html?cat=Chaveiros">Chaveiros</a></li>
+          <li><a href="produtos.html?cat=Canecas">Canecas</a></li>
+          <li><a href="produtos.html?cat=Decorativos%203D">Decorativos 3D</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Links úteis</h4>
+        <ul>
+          <li><a href="sobre.html">Sobre a Imaje</a></li>
+          <li><a href="faq.html">Perguntas frequentes</a></li>
+          <li><a href="privacidade.html">Política de privacidade</a></li>
+          <li><a href="carrinho.html">Meu carrinho</a></li>
+          <li><a href="admin.html">Área do lojista</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Fale com a gente</h4>
+        <ul>
+          <li><a href="mailto:contato@imaje.com.br"><i class="fa-solid fa-envelope"></i> contato@imaje.com.br</a></li>
+          <li><a href="#" data-wa-link target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> (31) 99999-9999</a></li>
+          <li><span><i class="fa-solid fa-clock"></i> Seg a Sex, 9h às 18h</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Imaje — Imagine diferente. Todos os direitos reservados.</span>
+      <span>Feito com 💗 e impressão 3D no Brasil</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/store.js"></script>
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

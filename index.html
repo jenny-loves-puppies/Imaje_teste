@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imaje — Imagine diferente | Presentes Únicos e Personalizados</title>
+<meta name="description" content="Imaje: camisetas, bottons, adesivos, chaveiros, canecas e decorativos 3D personalizados. Criamos ideias. Transformamos em experiências.">
+<link rel="icon" href="images/logo-imaje.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Imaje — página inicial">
+      <img src="images/logo-imaje.png" alt="Logo Imaje">
+      <span class="brand-text"><strong>Imaje</strong><span>Imagine diferente</span></span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <ul class="nav-list">
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="produtos.html">Catálogo</a></li>
+        <li><a href="produtos.html?cat=Camisetas">Camisetas</a></li>
+        <li><a href="produtos.html?cat=Bottons">Bottons</a></li>
+        <li><a href="produtos.html?cat=Decorativos%203D">3D</a></li>
+        <li><a href="produtos.html?cat=Promo%C3%A7%C3%B5es">Promoções</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="carrinho.html" class="icon-btn" aria-label="Ver carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count" data-cart-count>0</span>
+      </a>
+      <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero-section">
+    <span class="shape shape-circle s1"></span>
+    <span class="shape shape-circle s2"></span>
+    <span class="shape shape-circle s3"></span>
+    <span class="shape shape-circle s4"></span>
+    <span class="shape shape-x sx1">✕</span>
+    <span class="shape shape-x sx2">✕</span>
+    <span class="shape shape-bolt sb1"><i class="fa-solid fa-bolt"></i></span>
+
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="hero-eyebrow"><i class="fa-solid fa-wand-magic-sparkles"></i> Produção sob demanda</span>
+        <p class="hero-slogan">Imagine diferente</p>
+        <h1>Presentes <span class="accent-pink">Únicos</span>, Personalizados e <span class="accent-cyan">Criativos</span></h1>
+        <p class="hero-lead">Criamos ideias. Transformamos em experiências. Camisetas, bottons, adesivos, chaveiros, canecas e peças 3D feitas com tecnologia, criatividade e afeto em cada detalhe.</p>
+        <div class="hero-cta">
+          <a href="produtos.html" class="btn btn-pink btn-lg"><i class="fa-solid fa-rocket"></i> Explorar Catálogo</a>
+          <a href="#como-funciona" class="btn btn-outline btn-lg">Como funciona</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>+1.200</strong><span>Presentes entregues</span></div>
+          <div><strong>3</strong><span>Técnicas de produção</span></div>
+          <div><strong>4,9★</strong><span>Avaliação dos clientes</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <span class="hero-blob"></span>
+        <div class="hero-cards">
+          <div class="hero-card"><span class="ic">👕</span><strong>Camisetas</strong><span>a partir de R$ 60</span></div>
+          <div class="hero-card"><span class="ic">🎖️</span><strong>Bottons</strong><span>a partir de R$ 5</span></div>
+          <div class="hero-card"><span class="ic">☕</span><strong>Canecas</strong><span>a partir de R$ 40</span></div>
+          <div class="hero-card"><span class="ic">🏆</span><strong>Peças 3D</strong><span>a partir de R$ 30</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORIAS ============ -->
+  <section class="section" id="categorias-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Escolha seu estilo</span>
+        <h2>Navegue por categoria</h2>
+        <p>Do botton de 25 mm à peça decorativa impressa em 3D — tudo personalizável do seu jeito.</p>
+      </div>
+      <div class="cat-grid reveal" id="category-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ DESTAQUES ============ -->
+  <section class="section section-alt" id="destaques-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Queridinhos da loja</span>
+        <h2>Produtos em destaque</h2>
+        <p>Os favoritos de quem já presenteou com a gente.</p>
+      </div>
+      <div class="product-grid" id="featured-grid">
+        <div class="loading"><div class="spinner"></div>Carregando produtos…</div>
+      </div>
+      <div class="text-center mt-2">
+        <a href="produtos.html" class="btn btn-cyan btn-lg">Ver catálogo completo <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIFERENCIAIS ============ -->
+  <section class="section" id="diferenciais-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Por que a Imaje</span>
+        <h2>Tecnologia, criatividade e afeto</h2>
+        <p>Cada peça nasce de uma conversa e passa por mãos que se importam com o resultado.</p>
+      </div>
+      <div class="feature-grid reveal">
+        <article class="feature-card">
+          <div class="f-ic">🖨️</div>
+          <h3>Impressão 3D</h3>
+          <p>Modelagem própria e impressão em PLA com acabamento manual. Relevo real e resistência de verdade.</p>
+        </article>
+        <article class="feature-card">
+          <div class="f-ic">🌈</div>
+          <h3>Sublimação</h3>
+          <p>Cores vivas que não descascam. Ideal para canecas, bottons, adesivos e camisetas claras.</p>
+        </article>
+        <article class="feature-card">
+          <div class="f-ic">⚡</div>
+          <h3>Produção sob demanda</h3>
+          <p>Nada de estoque parado: produzimos depois do seu pedido, do jeito exato que você imaginou.</p>
+        </article>
+        <article class="feature-card">
+          <div class="f-ic">💗</div>
+          <h3>Afeto em cada detalhe</h3>
+          <p>Conferimos arte, embalagem e acabamento peça por peça antes de enviar para você.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA ============ -->
+  <section class="section section-dark" id="como-funciona">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" style="color:var(--yellow)">Do zero ao presente</span>
+        <h2>Como funciona a Imaje</h2>
+        <p>Um processo simples, transparente e feito junto com você.</p>
+      </div>
+      <div class="steps reveal">
+        <article class="step">
+          <h3>Escolha e personalize</h3>
+          <p>Selecione o produto, defina tamanho, cor e escreva a frase, o nome ou envie sua arte.</p>
+        </article>
+        <article class="step">
+          <h3>Aprovamos a arte</h3>
+          <p>Enviamos uma prévia no WhatsApp. Só produzimos depois do seu "pode ir!".</p>
+        </article>
+        <article class="step">
+          <h3>Produção sob demanda</h3>
+          <p>Impressão 3D, sublimação ou serigrafia — escolhemos a técnica ideal para sua peça.</p>
+        </article>
+        <article class="step">
+          <h3>Envio e rastreio</h3>
+          <p>Despachamos por Correios, Loggi ou Melhor Envio com código de rastreamento por e-mail.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TÉCNICAS ============ -->
+  <section class="section" id="tecnicas-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Nossas técnicas</span>
+        <h2>Cada ideia pede um processo</h2>
+        <p>Trabalhamos com três técnicas para entregar o melhor resultado em cada material.</p>
+      </div>
+      <div class="tech-grid reveal">
+        <article class="tech-card t-pink">
+          <div class="t-ic">🧱</div>
+          <h3>Impressão 3D</h3>
+          <p>Peças com volume e textura: chaveiros, decorativos e troféus de profissão modelados sob medida.</p>
+        </article>
+        <article class="tech-card t-cyan">
+          <div class="t-ic">🔥</div>
+          <h3>Sublimação</h3>
+          <p>Transferência por calor com cor fotográfica. Perfeita para canecas, bottons e tecidos claros.</p>
+        </article>
+        <article class="tech-card t-yellow">
+          <div class="t-ic">🖌️</div>
+          <h3>Serigrafia</h3>
+          <p>Estampa encorpada e durável, ideal para grandes quantidades de camisetas e uniformes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="section section-alt" id="reviews-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Clientes satisfeitos</span>
+        <h2>Quem imaginou diferente conta</h2>
+        <p>Histórias reais de quem já recebeu uma peça Imaje em casa.</p>
+      </div>
+      <div class="review-grid" id="review-grid">
+        <div class="loading"><div class="spinner"></div>Carregando depoimentos…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="section" id="newsletter-section">
+    <div class="container">
+      <div class="newsletter reveal">
+        <span class="shape shape-circle" style="width:120px;height:120px;background:rgba(255,255,255,.12);top:-30px;left:-30px"></span>
+        <h2>Promoções antes de todo mundo</h2>
+        <p>Assine e receba ofertas, lançamentos e ideias criativas direto no seu e-mail.</p>
+        <form class="newsletter-form" data-newsletter>
+          <label for="news-email" class="sr-only">Seu e-mail</label>
+          <input type="email" id="news-email" placeholder="seu@email.com" autocomplete="email">
+          <button type="submit" class="btn btn-yellow">Quero receber</button>
+        </form>
+        <p class="news-msg"></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo-imaje.png" alt="Logo Imaje">
+        <p>Criamos ideias. Transformamos em experiências. Presentes personalizados com tecnologia, criatividade e afeto.</p>
+        <div class="social-row">
+          <a href="https://instagram.com/imaje" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram da Imaje"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" data-wa-link class="social-btn wa" target="_blank" rel="noopener" aria-label="WhatsApp da Imaje"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:contato@imaje.com.br" class="social-btn" aria-label="Enviar e-mail"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="produtos.html?cat=Camisetas">Camisetas</a></li>
+          <li><a href="produtos.html?cat=Bottons">Bottons</a></li>
+          <li><a href="produtos.html?cat=Adesivos">Adesivos</a></li>
+          <li><a href="produtos.html?cat=Chaveiros">Chaveiros</a></li>
+          <li><a href="produtos.html?cat=Canecas">Canecas</a></li>
+          <li><a href="produtos.html?cat=Decorativos%203D">Decorativos 3D</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Links úteis</h4>
+        <ul>
+          <li><a href="sobre.html">Sobre a Imaje</a></li>
+          <li><a href="faq.html">Perguntas frequentes</a></li>
+          <li><a href="privacidade.html">Política de privacidade</a></li>
+          <li><a href="carrinho.html">Meu carrinho</a></li>
+          <li><a href="admin.html">Área do lojista</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Fale com a gente</h4>
+        <ul>
+          <li><a href="mailto:contato@imaje.com.br"><i class="fa-solid fa-envelope"></i> contato@imaje.com.br</a></li>
+          <li><a href="#" data-wa-link target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> (31) 99999-9999</a></li>
+          <li><span><i class="fa-solid fa-clock"></i> Seg a Sex, 9h às 18h</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Imaje — Imagine diferente. Todos os direitos reservados.</span>
+      <span>Feito com 💗 e impressão 3D no Brasil</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" data-wa-link class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script src="js/store.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

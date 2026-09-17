@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrinho — Imaje | Imagine diferente</title>
+<meta name="description" content="Seu carrinho de compras na Imaje.">
+<link rel="icon" href="images/logo-imaje.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Imaje — página inicial">
+      <img src="images/logo-imaje.png" alt="Logo Imaje">
+      <span class="brand-text"><strong>Imaje</strong><span>Imagine diferente</span></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <ul class="nav-list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Catálogo</a></li>
+        <li><a href="produtos.html?cat=Camisetas">Camisetas</a></li>
+        <li><a href="produtos.html?cat=Bottons">Bottons</a></li>
+        <li><a href="produtos.html?cat=Decorativos%203D">3D</a></li>
+        <li><a href="produtos.html?cat=Promo%C3%A7%C3%B5es">Promoções</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="carrinho.html" class="icon-btn" aria-label="Ver carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count" data-cart-count>0</span>
+      </a>
+      <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Você está aqui">
+      <a href="index.html">Início</a> <span>/</span> <span>Carrinho</span>
+    </nav>
+    <header class="page-head">
+      <h1>Seu carrinho</h1>
+      <p>Confira os itens, ajuste as quantidades e siga para o checkout. Seu carrinho fica salvo mesmo se você fechar a página.</p>
+    </header>
+  </div>
+
+  <section class="section" style="padding-top:1rem" id="cart-section">
+    <div class="container">
+      <div class="cart-layout" id="cart-layout">
+        <div id="cart-items">
+          <div class="loading"><div class="spinner"></div>Carregando carrinho…</div>
+        </div>
+        <aside class="summary-box" id="cart-summary" aria-label="Resumo do pedido"></aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo-imaje.png" alt="Logo Imaje">
+        <p>Criamos ideias. Transformamos em experiências. Presentes personalizados com tecnologia, criatividade e afeto.</p>
+        <div class="social-row">
+          <a href="https://instagram.com/imaje" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram da Imaje"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" data-wa-link class="social-btn wa" target="_blank" rel="noopener" aria-label="WhatsApp da Imaje"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:contato@imaje.com.br" class="social-btn" aria-label="Enviar e-mail"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="produtos.html?cat=Camisetas">Camisetas</a></li>
+          <li><a href="produtos.html?cat=Bottons">Bottons</a></li>
+          <li><a href="produtos.html?cat=Adesivos">Adesivos</a></li>
+          <li><a href="produtos.html?cat=Chaveiros">Chaveiros</a></li>
+          <li><a href="produtos.html?cat=Canecas">Canecas</a></li>
+          <li><a href="produtos.html?cat=Decorativos%203D">Decorativos 3D</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Links úteis</h4>
+        <ul>
+          <li><a href="sobre.html">Sobre a Imaje</a></li>
+          <li><a href="faq.html">Perguntas frequentes</a></li>
+          <li><a href="privacidade.html">Política de privacidade</a></li>
+          <li><a href="carrinho.html">Meu carrinho</a></li>
+          <li><a href="admin.html">Área do lojista</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Fale com a gente</h4>
+        <ul>
+          <li><a href="mailto:contato@imaje.com.br"><i class="fa-solid fa-envelope"></i> contato@imaje.com.br</a></li>
+          <li><a href="#" data-wa-link target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> (31) 99999-9999</a></li>
+          <li><span><i class="fa-solid fa-clock"></i> Seg a Sex, 9h às 18h</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Imaje — Imagine diferente. Todos os direitos reservados.</span>
+      <span>Feito com 💗 e impressão 3D no Brasil</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" data-wa-link class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script src="js/store.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

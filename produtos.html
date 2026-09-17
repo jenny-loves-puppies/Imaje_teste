@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo — Imaje | Imagine diferente</title>
+<meta name="description" content="Catálogo completo Imaje: camisetas, bottons, adesivos, chaveiros, canecas e decorativos 3D personalizados.">
+<link rel="icon" href="images/logo-imaje.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Imaje — página inicial">
+      <img src="images/logo-imaje.png" alt="Logo Imaje">
+      <span class="brand-text"><strong>Imaje</strong><span>Imagine diferente</span></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <ul class="nav-list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html" class="active">Catálogo</a></li>
+        <li><a href="produtos.html?cat=Camisetas">Camisetas</a></li>
+        <li><a href="produtos.html?cat=Bottons">Bottons</a></li>
+        <li><a href="produtos.html?cat=Decorativos%203D">3D</a></li>
+        <li><a href="produtos.html?cat=Promo%C3%A7%C3%B5es">Promoções</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="carrinho.html" class="icon-btn" aria-label="Ver carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count" data-cart-count>0</span>
+      </a>
+      <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Você está aqui">
+      <a href="index.html">Início</a> <span>/</span> <span id="crumb-current">Catálogo</span>
+    </nav>
+
+    <header class="page-head">
+      <h1 id="shop-title">Catálogo completo</h1>
+      <p id="shop-subtitle">Escolha, personalize e receba em casa. Produção sob demanda com tecnologia, criatividade e afeto.</p>
+    </header>
+  </div>
+
+  <section class="section" style="padding-top:1.5rem" id="shop-section">
+    <div class="container">
+      <div class="chip-row" id="chip-row"></div>
+
+      <div class="shop-layout">
+        <aside class="filter-panel" id="filter-panel" aria-label="Filtros">
+          <div class="filter-group">
+            <h4>Categoria</h4>
+            <div id="cat-filters"></div>
+          </div>
+          <div class="filter-group">
+            <h4>Preço máximo</h4>
+            <div class="range-wrap">
+              <input type="range" id="price-range" min="0" max="200" step="5" value="200" aria-label="Preço máximo">
+              <span class="range-val" id="price-val">até R$ 200,00</span>
+            </div>
+          </div>
+          <div class="filter-group">
+            <h4>Técnica</h4>
+            <div id="tech-filters">
+              <label class="filter-opt"><input type="checkbox" value="Impressão 3D" data-tech> Impressão 3D</label>
+              <label class="filter-opt"><input type="checkbox" value="Sublimação" data-tech> Sublimação</label>
+              <label class="filter-opt"><input type="checkbox" value="Serigrafia" data-tech> Serigrafia</label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <h4>Disponibilidade</h4>
+            <label class="filter-opt"><input type="checkbox" id="only-stock"> Somente em estoque</label>
+          </div>
+          <button class="btn btn-outline btn-block btn-sm" id="clear-filters" type="button">
+            <i class="fa-solid fa-rotate-left"></i> Limpar filtros
+          </button>
+        </aside>
+
+        <div>
+          <div class="shop-toolbar">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass s-ic" aria-hidden="true"></i>
+              <label for="search-input" class="sr-only">Buscar produtos</label>
+              <input type="search" id="search-input" placeholder="Buscar por nome ou descrição…">
+            </div>
+            <label for="sort-select" class="sr-only">Ordenar por</label>
+            <select class="select-styled" id="sort-select">
+              <option value="relevance">Mais relevantes</option>
+              <option value="price-asc">Menor preço</option>
+              <option value="price-desc">Maior preço</option>
+              <option value="name">Nome (A–Z)</option>
+              <option value="stock">Maior estoque</option>
+            </select>
+            <span class="result-count" id="result-count">—</span>
+          </div>
+
+          <div class="product-grid" id="shop-grid">
+            <div class="loading"><div class="spinner"></div>Carregando catálogo…</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo-imaje.png" alt="Logo Imaje">
+        <p>Criamos ideias. Transformamos em experiências. Presentes personalizados com tecnologia, criatividade e afeto.</p>
+        <div class="social-row">
+          <a href="https://instagram.com/imaje" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram da Imaje"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" data-wa-link class="social-btn wa" target="_blank" rel="noopener" aria-label="WhatsApp da Imaje"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:contato@imaje.com.br" class="social-btn" aria-label="Enviar e-mail"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="produtos.html?cat=Camisetas">Camisetas</a></li>
+          <li><a href="produtos.html?cat=Bottons">Bottons</a></li>
+          <li><a href="produtos.html?cat=Adesivos">Adesivos</a></li>
+          <li><a href="produtos.html?cat=Chaveiros">Chaveiros</a></li>
+          <li><a href="produtos.html?cat=Canecas">Canecas</a></li>
+          <li><a href="produtos.html?cat=Decorativos%203D">Decorativos 3D</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Links úteis</h4>
+        <ul>
+          <li><a href="sobre.html">Sobre a Imaje</a></li>
+          <li><a href="faq.html">Perguntas frequentes</a></li>
+          <li><a href="privacidade.html">Política de privacidade</a></li>
+          <li><a href="carrinho.html">Meu carrinho</a></li>
+          <li><a href="admin.html">Área do lojista</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Fale com a gente</h4>
+        <ul>
+          <li><a href="mailto:contato@imaje.com.br"><i class="fa-solid fa-envelope"></i> contato@imaje.com.br</a></li>
+          <li><a href="#" data-wa-link target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> (31) 99999-9999</a></li>
+          <li><span><i class="fa-solid fa-clock"></i> Seg a Sex, 9h às 18h</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Imaje — Imagine diferente. Todos os direitos reservados.</span>
+      <span>Feito com 💗 e impressão 3D no Brasil</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" data-wa-link class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script src="js/store.js"></script>
+<script src="js/main.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>
